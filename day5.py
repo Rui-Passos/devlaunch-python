@@ -1,10 +1,26 @@
-# Escrita em ficheiro
-with open("status.log", "w") as f:
-    f.write("payments: UP\n")
-    f.write("auth: DOWN\n")
+import random
+from datetime import datetime
 
-# Leitura do ficheiro
-print("=== CONTEÚDO DO FICHEIRO ===")
-with open("status.log", "r") as f:
-    for linha in f:
-        print(linha.strip())
+STATUSES = ["UP", "DOWN"]
+SERVICES = ["payments", "auth", "db", "api"]
+
+
+def log_service_status(service, status):
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+    with open("status.log", "a") as file:
+        file.write(f"[{timestamp} {service}: {status}\n")
+
+
+# --- Generate random status and log ---
+for service in SERVICES:
+    status = random.choice(STATUSES)
+    log_service_status(service, status)
+
+
+# --- Read logs ---
+print("=== SERVICE STATUS LOG ===")
+
+with open("status.log", "r") as file:
+    for line in file:
+        print(line.strip())
