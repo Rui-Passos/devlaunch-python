@@ -1,21 +1,23 @@
 #!/bin/bash
 
-# 1. Navega para a pasta onde o ficheiro está guardado
+# Move o terminal para a pasta onde o ficheiro está
 cd "$(dirname "$0")"
 
-echo "------------------------------------------------"
-echo "A iniciar o site da Inês... Não feches esta janela!"
-echo "------------------------------------------------"
+echo "A iniciar o servidor... Por favor aguarda."
 
-# 2. Ativa o ambiente virtual
-# No Mac o caminho é venv/bin/activate
-source venv/bin/activate
+# Ativa o ambiente virtual
+if [ -d "venv" ]; then
+    source venv/bin/activate
+else
+    echo "Erro: Pasta venv não encontrada. Cria o ambiente primeiro."
+    exit 1
+fi
 
-# 3. Instala as dependências (caso tenhas mudado de PC)
-pip install -r requirements.txt
+# Instala o Flask se não estiver instalado (segurança extra)
+pip install flask
 
-# 4. Abre o site automaticamente no teu browser padrão
+# Abre o browser
 open "http://127.0.0.1:5000"
 
-# 5. Corre o servidor Python
+# Corre o Python
 python3 app.py
