@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "titulo": "Pintura a Óleo - Séc. XVIII",
+        "descricao": "Limpeza de vernizes oxidados e reintegração cromática.",
+        "imagem": "https://via.placeholder.com/400x300/e9e4d9/8b795e?text=Restauro+Pintura"
+    },
+    {
+        "id": 2,
+        "titulo": "Talha Dourada - Altar-Mor",
+        "descricao": "Consolidação do suporte e aplicação de folha de ouro.",
+        "imagem": "https://via.placeholder.com/400x300/e9e4d9/8b795e?text=Restauro+Talha"
+    }
+]

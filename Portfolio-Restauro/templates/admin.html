@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Painel Admin - Inês Sambado</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body style="padding: 50px;">
+    <h1>Adicionar Novo Projeto</h1>
+    {% if mensagem_erro %}
+    <p style="color: white; background-color: #d9534f; padding: 10px; border-radius: 5px;">
+        {{ mensagem_erro }}
+    </p>
+{% endif %}
+    <form action="/admin" method="POST" style="display: flex; flex-direction: column; gap: 15px; max-width: 400px;">
+        <input type="text" name="titulo" placeholder="Título do Projeto" required>
+        <textarea name="descricao" placeholder="Descrição do trabalho" required></textarea>
+        <input type="text" name="imagem" placeholder="URL da Imagem" required>
+        <button type="submit" style="background: #8b795e; color: white; padding: 10px; border: none; cursor: pointer;">
+            Gravar Projeto
+        </button>
+    </form>
+    <br>
+    <a href="/">Voltar ao Site</a>
+</body>
+</html>

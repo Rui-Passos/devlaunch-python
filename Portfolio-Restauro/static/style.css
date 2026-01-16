@@ -1,0 +1,173 @@
+html {
+    scroll-behavior: smooth; /* Faz com que o movimento seja suave e não salto*/
+    scroll-padding-top: 80px; /* Ajusta o valor para a altura aproximada do menu*/
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    background-color: #f9f7f2; /* Tom de papel antigo/neutro */
+    margin: 0;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif;
+}
+
+header {
+    padding: 215px0px 50px;
+    background: white;
+    border-bottom: 1px solid #ddd;
+
+    /* toranr o menu fixo*/
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Garante que o menu fica por cima de todos os outros elementos */
+    /* Efeito sombra leve para dar profundidade ao fazer scroll */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    font-weight: 300;
+}
+
+#hero {
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: #e9e4d9; /* Placeholder para uma imagem de fundo */
+}
+
+#trabalhos {
+    padding: 60px 50px;
+    background-color: #fff;
+}
+
+#trabalhos h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Grelha responsiva */
+    gap: 30px;
+}
+
+.projeto-card {
+    background: #fdfcf9;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    transition: transform 0.3s ease;
+}
+
+.projeto-card:hover {
+    transform: translateY(-5px); /* Efeito de levitação */
+}
+
+.foto-container {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+}
+
+.foto-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a foto não fica deformada */
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(139, 121, 94, 0.7); /* Tom de bronze transparente */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+}
+
+.foto-container:hover .overlay {
+    opacity: 1;
+}
+
+.projeto-card h3 {
+    margin: 15px 10px 5px;
+    font-size: 1.2rem;
+}
+
+.projeto-card p {
+    margin: 0 10px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+#curriculo {
+    padding: 80px 50px;
+    background-color: #f4f1ea; /* Tom ligeiramente diferente para destacar */
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    border-left: 2px solid #8b795e; /* A linha vertical */
+    padding-left: 30px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+/* O ponto na linha */
+.timeline-dot {
+    position: absolute;
+    left: -41px; /* Alinha exatamente sobre a linha vertical */
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: #8b795e;
+    border-radius: 50%;
+    border: 4px solid #f4f1ea;
+}
+
+.timeline-date {
+    font-weight: bold;
+    color: #8b795e;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+
+.timeline-content h3 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.timeline-content p {
+    margin: 5px 0 0;
+    color: #666;
+    line-height: 1.5;
+}
